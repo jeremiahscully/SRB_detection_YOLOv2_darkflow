@@ -1,0 +1,6 @@
+
+
+https://medium.com/@enriqueav/useful-terminal-tips-and-tricks-for-the-machine-learning-practitioner-6e96b61b2bc2####### GNUPLOT
+
+
+https://github.com/thtrieu/darkflow/issues/264############TRANING AND VALIDATION
