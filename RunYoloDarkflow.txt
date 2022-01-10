@@ -1,0 +1,27 @@
+python flow --model cfg/yolov2.cfg --load yolov2.weights --train --annotation train/SRBannotations --dataset train/SRBimages  --epoch 500
+
+python flow --model cfg/yolov2_Type_III.cfg --load yolov2.weights --train --annotation train/train1_ann --dataset train/train1_img --gpu 0.8 --epoch 10
+
+python flow --model cfg/yolov2_Type_III.cfg --load yolov2.weights --train --annotation train/train1_ann --dataset train/train1_img --gpu 0.8 --batch 32 --epoch 10 --load -1
+
+python flow --model cfg/yolov2_Type_III.cfg --load yolov2.weights --train --annotation train/train1_ann --dataset train/train1_img --gpu 1.0 --batch 64 --epoch 10
+
+python flow --model cfg/yolov2_Type_III_2.cfg --load yolov2.weights --train --annotation train/train3_ann --dataset train/train3_img --gpu 1.0 --batch 32 --epoch 10
+
+python flow --imgdir test/SRB --model cfg/yolov2_Type_III.cfg --load yolov2.weights --json
+
+python flow --imgdir test/testedit --model cfg/yolov2_Type_III_2.cfg --load yolov2.weights --load 36456 --json
+
+python flow --imgdir test/clean/20210831 --model cfg/yolov2_Type_III_2.cfg --load yolov2.weights --load 124800 --threshold 0.1
+
+
+
+
+
+python flow --model cfg/yolov2_Type_III_2.cfg --load yolov2.weights --train --annotation train/train4_ann --dataset train/train4_img --gpu 1.0 --batch 32 --epoch 10 --load -1
+
+python flow --imgdir test/testim/test --model cfg/yolov2_Type_III_2.cfg --load yolov2.weights --load 36456 --threshold 0.2 --json
+
+https://www.arunponnusamy.com/preparing-custom-dataset-for-training-yolo-object-detector.html
+
+python flow --model cfg/yolov2_Type_III_2.cfg --load yolov2.weights --train --annotation train/train4_ann --dataset train/train4_img --val_dataset validation/val_img --val_annotation validation/val --gpu 1.0 --batch 32 --epoch 50
